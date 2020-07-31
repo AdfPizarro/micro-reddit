@@ -10,12 +10,47 @@
 
 ## How Test the Project
 
+Get a local copy of the file  clone with HTTPS 
+
+```
+https://github.com/AdfPizarro/micro-reddit    
+```
+
+Migrate the database with the following command
+```
+bin/rake db:migrate
+```
+
+Run the seed to populate the database
+```
+bin/rails db:seed
+```
+
+Now you can check the relationships between the elements in the db 
 -  u2 = User.find(2)
 - c1 = u2.comments.first should return that user’s comment. #comments returns an array with comments, which is why we need to use #first to actually retrieve the comment itself.
 - c1.user should return that comment’s author User (u2).
 - p1 = Post.first
 - p1.comments.first should return the comment c1.
 - c1.post should return the post p1.
+
+Or create your own elements
+
+You can create users with the following command
+
+```
+User.create(username: "Jhon Doe", email: "example@example.com", password: "password")
+```
+
+Create posts (you need to select a valid user_id, for testing could be 1 or 2)
+```
+Post.create(title: "My first post", body: "Post content example", user_id: 1)
+```
+
+And create comments (you need to select a valid user_id and a valid post_id, for testing could be 1 or 2)
+```
+Comment.create(content: "Comment example", user_id: 1, post_id: 1)
+```
 
 ## Built With
 - Ruby 
