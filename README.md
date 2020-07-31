@@ -1,24 +1,50 @@
-# README
+# Building With Active Records
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  This project is to practice how to build with active records. It involves building a small application called micro-reddit. Here, we apply our knowledge in designing tables and their relationship to create an application where a user can create post and add a comment to it.
 
-Things you may want to cover:
+## Features Of This Game
 
-* Ruby version
+- User can create a post
+- User can add comment to his post.
+- Cooments and posts are stored in the database.
 
-* System dependencies
+## How Test the Project
 
-* Configuration
+-  u2 = User.find(2)
+- c1 = u2.comments.first should return that user’s comment. #comments returns an array with comments, which is why we need to use #first to actually retrieve the comment itself.
+- c1.user should return that comment’s author User (u2).
+- p1 = Post.first
+- p1.comments.first should return the comment c1.
+- c1.post should return the post p1.
 
-* Database creation
+## Built With
+- Ruby 
+- Rails
 
-* Database initialization
+## Authors
 
-* How to run the test suite
+👤 **Adrian Flores Pizarro**
+- Github: [@AdfPizarro](https://github.com/AdfPizarro)
+- Twitter: [@AdfPizarro](https://twitter.com/adfpizarro)
+- Linkedin: [adrian-flores-pizarro-73b62316a](https://www.linkedin.com/in/adrian-flores-pizarro-73b62316a/)
 
-* Services (job queues, cache servers, search engines, etc.)
+👤 **Nnamdi Emelu**
+- Github: [@githubhandle](https://github.com/zubenna)
+- Twitter: [@twitterhandle](https://twitter.com/zubenna)
+- Linkedin: [linkedin](https://linkedin.com/in/nnamdi-emelu-08b14340/)
 
-* Deployment instructions
+## 🤝 Contributing
 
-* ...
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/AdfPizarro/micro-reddit/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Project originally taken from The Odin Project
+- Project inspired by Microverse Program
+
